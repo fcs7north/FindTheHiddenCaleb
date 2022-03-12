@@ -7,14 +7,11 @@
 					<template v-if="check_tggr">'{{nowPlayer}}'님,<br>술래탈출 성공!</template>
 					<template v-else>'{{nowPlayer}}'님이 찾았어요!</template>
 				</h1>
-				<q-btn
-					@click="checkNext()"
-					size="1.5rem"
-					class="q-px-xl q-py-xs"
+				<QmButton
+					title="확인"
+					:sound="require('src/assets/find_alert_01.mp3')"
 					color="accent"
-					label="확인"
-					padding=".5rem 2rem"
-					rounded
+					:fn="checkNext"
 				/>
 			</section>
 		</div>
@@ -24,6 +21,7 @@
 <script setup>
 import { inject, ref, onMounted } from 'vue'
 import { useStore } from 'vuex'
+import QmButton from 'src/stepA/QmButton.vue'
 import pObj from 'src/inc/js/onLoadEvt.js'
 
 const store = useStore()

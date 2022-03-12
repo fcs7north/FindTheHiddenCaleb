@@ -16,42 +16,29 @@
 			</div>
 
 			<p>
-				<q-btn
-					@click="nextGame('A')"
-					size="1.5rem"
-					class="q-px-xl q-py-xs"
+				<QmButton
+					title="홈으로"
+					:sound="require('src/assets/normal_02.mp3')"
 					color="positive"
-					label="홈으로"
-					padding=".5rem 2rem"
-					rounded
+					:fn="nextA"
 				/>
-				<q-btn
-					@click="nextGame('B')"
-					size="1.5rem"
-					class="q-px-xl q-py-xs"
-					color="primary"
-					label="참가자 목록"
-					padding=".5rem 2rem"
-					rounded
+				<QmButton
+					title="참가자 목록"
+					:sound="require('src/assets/normal_02.mp3')"
+					:fn="nextB"
 				/>
-				<q-btn
+				<QmButton
 					v-if="taggerSize > 0"
-					@click="resetGame()"
-					size="1.5rem"
-					class="q-px-xl q-py-xs"
+					title="술래모두탈출!"
+					:sound="require('src/assets/escape_01.mp3')"
 					color="negative"
-					label="술래모두탈출!"
-					padding=".5rem 2rem"
-					rounded
+					:fn="resetGame"
 				/>
-				<q-btn
-					@click="nextGame('C')"
-					size="1.5rem"
-					class="q-px-xl q-py-xs"
+				<QmButton
+					title="게임으로"
+					:sound="require('src/assets/next_step.mp3')"
 					color="accent"
-					label="게임으로"
-					padding=".5rem 2rem"
-					rounded
+					:fn="nextC"
 				/>
 			</p>
 		</section>
@@ -61,6 +48,7 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
+import QmButton from 'src/stepA/QmButton.vue'
 import pObj from 'src/inc/js/onLoadEvt.js'
 
 const store = useStore()
@@ -73,6 +61,9 @@ const stepMain = ref(null)
 const mounted_chkr = ref(false)
 onMounted(() => pObj.playInStepB(stepMain.value, mounted_chkr))
 const nextGame = (stage) => pObj.playOut(stepMain.value, store, stage)
+const nextA = () => nextGame('A')
+const nextB = () => nextGame('B')
+const nextC = () => nextGame('C')
 </script>
 
 <style lang="scss" scoped>

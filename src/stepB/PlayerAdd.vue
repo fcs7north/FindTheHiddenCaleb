@@ -9,27 +9,19 @@
 				/>
 
 				<div class="btns-part">
-					<q-btn
-						@click="addPlayer()"
-						size="1.5rem"
-						class="q-px-xl q-py-xs"
-						color="accent"
-						label="확인"
-						padding=".5rem 2rem"
+					<QmButton
+						title="확인"
+						:sound="require('src/assets/normal_02.mp3')"
+						:fn="addPlayer"
 						:disable="playerListLen <= 0"
-						rounded
 					/>
-					<q-btn
-						@click="canclePlayerAdd()"
-						size="1.5rem"
-						class="q-px-xl q-py-xs"
-						color="primary"
-						label="취소"
-						padding=".5rem 2rem"
-						rounded
+					<QmButton
+						title="취소"
+						:sound="require('src/assets/cancle_02.mp3')"
+						color="negative"
+						:fn="canclePlayerAdd"
 					/>
 				</div>
-
 			</section>
 		</div>
 	</div>
@@ -38,6 +30,7 @@
 <script setup>
 import { computed, inject, ref } from 'vue'
 import { useStore } from 'vuex'
+import QmButton from 'src/stepA/QmButton.vue'
 
 const store = useStore()
 const _ = require('lodash')

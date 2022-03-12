@@ -135,11 +135,11 @@ module.exports = configure(function (ctx) {
 			},
 
 			manifest: {
-				name: `Jnet App`,
-				short_name: `Jnet App`,
-				description: `A Quasar Framework app`,
+				name: `Find The Hidden Caleb`,
+				short_name: `Find Caleb`,
+				description: `Find The Hidden Caleb app`,
 				display: 'standalone',
-				orientation: 'portrait',
+				orientation: 'landscape',
 				background_color: '#ffffff',
 				theme_color: '#027be3',
 				icons: [

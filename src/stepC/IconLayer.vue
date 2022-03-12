@@ -35,6 +35,3 @@ const BgLayerStyle = {
 	borderRadius: '.5rem'
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

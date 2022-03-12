@@ -25,34 +25,24 @@
 			</div>
 
 			<div>
-				<q-btn
-					@click="gotoHome()"
-					size="1.5rem"
-					class="q-px-xl q-py-xs"
+				<QmButton
+					title="홈으로"
+					:sound="require('src/assets/normal_02.mp3')"
 					color="negative"
-					label="홈으로"
-					padding=".5rem 2rem"
-					rounded
+					:fn="gotoHome"
 				/>
-				<q-btn
-					@click="playerASCtrl()"
-					size="1.5rem"
-					class="q-px-xl q-py-xs"
+				<QmButton
+					title="참가자 관리"
+					:sound="require('src/assets/normal_02.mp3')"
 					color="accent"
-					label="참가자 관리"
-					padding=".5rem 2rem"
-					rounded
+					:fn="playerASCtrl"
 				/>
 				<!-- 1명이상 있을 경우 보임 -->
-				<q-btn
+				<QmButton
 					v-if="playerCount > 0"
-					@click="nextGame()"
-					size="1.5rem"
-					class="q-px-xl q-py-xs"
-					color="primary"
-					label="게임시작"
-					padding=".5rem 2rem"
-					rounded
+					title="게임시작"
+					:sound="require('src/assets/next_step.mp3')"
+					:fn="nextGame"
 				/>
 			</div>
 		</section>
@@ -64,8 +54,9 @@
 <script setup>
 import { ref, provide, onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
-import pObj from 'src/inc/js/onLoadEvt.js'
 import PlayerAdd from 'src/stepB/PlayerAdd.vue'
+import QmButton from 'src/stepA/QmButton.vue'
+import pObj from 'src/inc/js/onLoadEvt.js'
 
 const _ = require('lodash')
 const store = useStore()

@@ -9,13 +9,12 @@
 				<strong>CALEB</strong>
 			</h1>
 			<p>
-				<q-btn
-					@click="nextGame()"
+				<QmButton
+					title="게임시작"
 					size="36px"
-					class="q-px-xl q-py-xs"
-					color="negative"
-					padding=".5rem 3rem 0"
-					label="게임시작"
+					padding=".9rem 2rem .3rem"
+					:sound="require('src/assets/main_start.mp3')"
+					:fn="nextGame"
 				/>
 			</p>
 		</section>
@@ -26,6 +25,7 @@
 import { ref, onMounted } from 'vue'
 import { useStore } from 'vuex'
 import pObj from 'src/inc/js/onLoadEvt.js'
+import QmButton from 'src/stepA/QmButton.vue'
 
 const store = useStore()
 const stepMain = ref(null)

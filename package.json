@@ -1,8 +1,8 @@
 {
   "name": "sulre-jbg",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Jnet App",
+  "description": "Find The Hidden Caleb App",
+  "productName": "Find The Hidden Caleb",
   "author": "KJHong <fcs7north@gmail.com>",
   "private": true,
   "scripts": {

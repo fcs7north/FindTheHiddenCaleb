@@ -20,7 +20,6 @@ export default {
 		fnB: { type: Function, default: () => console.log('Empty Function!') },
 		fnVal: { type: Number, default: -1 },
 		pzVal: { type: Number, default: -1 },
-		notFind: { type: Boolean, default: false },
 	},
 	data() {
 		return {
@@ -30,8 +29,8 @@ export default {
 	},
 	methods: {
 		buttonSound (val, opt) {
-			// console.log(`notFind: ${this.notFind} , ${this.fnVal} === ${this.pzVal}`)
 			let audio = null
+			// console.log(`${val} : ${this.pzVal}`)
 			if (val === this.pzVal) { // 주니를 찾은 경우
 				audio = new Audio(opt.find)
 			} else { // 기본

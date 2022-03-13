@@ -1,5 +1,6 @@
 <template>
 	<div id="step-main" ref="stepMain" v-show="mounted_chkr">
+		<AllSSound :checker="notFind" />
 		<section>
 			<h1><TitleLayer v-if="nPShower" /></h1>
 			<div class="j-cover">
@@ -11,7 +12,6 @@
 								:fnB="puzzleDoneNo"
 								:fnVal="i"
 								:pzVal="puzzleWithCALEB"
-								:notFind="notFind"
 							/>
 						</template>
 					</ul>
@@ -30,6 +30,7 @@ import FindAlert from 'src/stepC/FindAlert.vue'
 import IconLayer from 'src/stepC/IconLayer.vue'
 import TitleLayer from 'src/stepC/TitleLayer.vue'
 import PuzzleButton from 'src/stepC/PuzzleButton.vue'
+import AllSSound from 'src/stepC/AllSSound.vue'
 import pObj from 'src/inc/js/onLoadEvt.js'
 
 const store = useStore()

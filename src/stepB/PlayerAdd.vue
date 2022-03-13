@@ -6,6 +6,8 @@
 					v-model="playerList"
 					filled
 					type="textarea"
+					autofocus
+					placeholder="참가자를 쉼표로 구분하여 추가해 주세요 (예: 홍길동, 김철수, 김유신)"
 				/>
 
 				<div class="btns-part">

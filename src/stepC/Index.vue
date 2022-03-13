@@ -5,10 +5,14 @@
 			<div class="j-cover">
 				<q-scroll-area class="j-cover-scroll">
 					<ul>
-						<li v-for="i in puzzleCount.size" :key="i" @click="findASCtrl(i)">
-							<strong>{{ i }}</strong>
-							<IconLayer v-if="puzzleDoneNo(i) && puzzleWithCALEB !== i" />
-						</li>
+						<template v-for="i in puzzleCount.size" :key="i">
+							<PuzzleButton
+								:fnA="findASCtrl"
+								:fnB="puzzleDoneNo"
+								:fnVal="i"
+								:pzVal="puzzleWithCALEB"
+							/>
+						</template>
 					</ul>
 				</q-scroll-area>
 			</div>
@@ -24,6 +28,7 @@ import { useStore } from 'vuex'
 import FindAlert from 'src/stepC/FindAlert.vue'
 import IconLayer from 'src/stepC/IconLayer.vue'
 import TitleLayer from 'src/stepC/TitleLayer.vue'
+import PuzzleButton from 'src/stepC/PuzzleButton.vue'
 import pObj from 'src/inc/js/onLoadEvt.js'
 
 const store = useStore()

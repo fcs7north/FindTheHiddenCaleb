@@ -1,0 +1,58 @@
+<template>
+	<li @click="buttonSound(fnVal, require('src/assets/pzz_open.mp3'))">
+		<strong>{{ fnVal }}</strong>
+		<IconLayer v-if="fnB(fnVal) && pzVal !== fnVal" />
+	</li>
+</template>
+
+<script>
+import IconLayer from 'src/stepC/IconLayer.vue'
+
+export default {
+	components: { IconLayer },
+	props: {
+		fnA: { type: Function, default: () => console.log('Empty Function!') },
+		fnB: { type: Function, default: () => console.log('Empty Function!') },
+		fnVal: { type: Number, default: -1 },
+		pzVal: { type: Number, default: -1 },
+	},
+	methods: {
+		buttonSound (val, mp3) {
+			const audio = new Audio(mp3)
+			audio.play()
+			this.fnA(val)
+		}
+	},
+}
+</script>
+
+<style lang="scss" scoped>
+li {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	gap: .5rem;
+	padding: .5rem 1rem;
+	background-color: $light-blue-8;
+	border-radius: .5rem;
+	box-shadow: .1rem .1rem .3rem rgb(0, 0, 0, .8);
+	color: #fff;
+	font-weight: 800;
+	font-size: 3.5rem;
+	cursor: pointer;
+	overflow: hidden;
+	&:hover {
+		background-color: $light-green-7;
+	}
+	> div {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 100;
+		width: 100%;
+		height: 100%;
+	}
+}
+</style>

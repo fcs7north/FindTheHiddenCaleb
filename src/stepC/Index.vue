@@ -11,6 +11,7 @@
 								:fnB="puzzleDoneNo"
 								:fnVal="i"
 								:pzVal="puzzleWithCALEB"
+								:notFind="notFind"
 							/>
 						</template>
 					</ul>

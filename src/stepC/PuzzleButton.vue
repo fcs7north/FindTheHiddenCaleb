@@ -1,5 +1,10 @@
 <template>
-	<li @click="buttonSound(fnVal, require('src/assets/pzz_open.mp3'))">
+	<li @click="buttonSound(fnVal, {
+			normal: require('src/assets/pzz_open.mp3'),
+			success: require('src/assets/all_success.mp3'),
+			find: require('src/assets/find_caleb.mp3'),
+		}
+	)">
 		<strong>{{ fnVal }}</strong>
 		<IconLayer v-if="fnB(fnVal) && pzVal !== fnVal" />
 	</li>
@@ -15,14 +20,27 @@ export default {
 		fnB: { type: Function, default: () => console.log('Empty Function!') },
 		fnVal: { type: Number, default: -1 },
 		pzVal: { type: Number, default: -1 },
+		notFind: { type: Boolean, default: false },
+	},
+	data() {
+		return {
+			dbl_sheild: false,
+			d_succ: require('src/assets/all_success.mp3')
+		}
 	},
 	methods: {
-		buttonSound (val, mp3) {
-			const audio = new Audio(mp3)
+		buttonSound (val, opt) {
+			// console.log(`notFind: ${this.notFind} , ${this.fnVal} === ${this.pzVal}`)
+			let audio = null
+			if (val === this.pzVal) { // 주니를 찾은 경우
+				audio = new Audio(opt.find)
+			} else { // 기본
+				audio = new Audio(opt.normal)
+			}
 			audio.play()
 			this.fnA(val)
 		}
-	},
+	}
 }
 </script>
 

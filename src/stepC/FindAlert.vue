@@ -4,8 +4,8 @@
 			<section>
 				<h1 v-if="notFind===true">모두 성공!</h1>
 				<h1 v-else>
-					<template v-if="check_tggr">'{{nowPlayer}}'님,<br>술래탈출 성공!</template>
-					<template v-else>'{{nowPlayer}}'님이 찾았어요!</template>
+					<template v-if="check_tggr">'{{ nowPlayer }}'님,<br>술래탈출 성공!</template>
+					<template v-else>'{{ nowPlayer }}'님 술래<q-icon name="sentiment_very_satisfied"></q-icon></template>
 				</h1>
 				<QmButton
 					title="확인"

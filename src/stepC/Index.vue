@@ -1,5 +1,15 @@
 <template>
 	<div id="step-main" ref="stepMain" v-show="mounted_chkr">
+		<div class="stop-t-game">
+			<QmButton
+				title="OUT"
+				size="1rem"
+				:sound="require('src/assets/escape_01.mp3')"
+				color="positive"
+				padding=".5rem 1rem"
+				:fn="nextGame"
+			/>
+		</div>
 		<AllSSound :checker="notFind" />
 		<section>
 			<h1><TitleLayer v-if="nPShower" /></h1>
@@ -31,6 +41,7 @@ import IconLayer from 'src/stepC/IconLayer.vue'
 import TitleLayer from 'src/stepC/TitleLayer.vue'
 import PuzzleButton from 'src/stepC/PuzzleButton.vue'
 import AllSSound from 'src/stepC/AllSSound.vue'
+import QmButton from 'src/stepA/QmButton.vue'
 import pObj from 'src/inc/js/onLoadEvt.js'
 
 const store = useStore()
@@ -114,6 +125,19 @@ div#step-main {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
+	.stop-t-game {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+		z-index: 100;
+		button {
+			font-weight: 800;
+			opacity: .5;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
 	h1 {
 		min-height: 5.5rem;
 		font-size: 4.5rem;

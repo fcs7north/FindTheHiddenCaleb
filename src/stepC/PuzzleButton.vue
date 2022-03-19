@@ -1,7 +1,6 @@
 <template>
 	<li @click="buttonSound(fnVal, {
 			normal: require('src/assets/pzz_open.mp3'),
-			success: require('src/assets/all_success.mp3'),
 			find: require('src/assets/find_caleb.mp3'),
 		}
 	)">
@@ -24,7 +23,6 @@ export default {
 	data() {
 		return {
 			dbl_sheild: false,
-			d_succ: require('src/assets/all_success.mp3')
 		}
 	},
 	methods: {

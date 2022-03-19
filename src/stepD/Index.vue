@@ -40,15 +40,24 @@
 					color="accent"
 					:fn="nextC"
 				/>
+				<QmButton
+					title="술래가 되셨나요?"
+					:sound="require('src/assets/normal_02.mp3')"
+					color="positive"
+					:fn="openExp"
+				/>
 			</p>
 		</section>
 	</div>
+	
+	<LayerForExp v-if="expIsOpen" />
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, provide } from 'vue'
 import { useStore } from 'vuex'
 import QmButton from 'src/stepA/QmButton.vue'
+import LayerForExp from 'src/stepD/LayerForExp.vue'
 import pObj from 'src/inc/js/onLoadEvt.js'
 
 const store = useStore()
@@ -64,6 +73,11 @@ const nextGame = (stage) => pObj.playOut(stepMain.value, store, stage)
 const nextA = () => nextGame('A')
 const nextB = () => nextGame('B')
 const nextC = () => nextGame('C')
+
+// 설명용 레이어 제어
+const expIsOpen = ref(false)
+provide('expIsOpen', expIsOpen)
+const openExp = () => expIsOpen.value = true
 </script>
 
 <style lang="scss" scoped>

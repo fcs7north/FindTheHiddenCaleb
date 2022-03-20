@@ -1,9 +1,8 @@
 <template>
-	<li @click="buttonSound(fnVal, {
-			normal: require('src/assets/pzz_open.mp3'),
-			find: require('src/assets/find_caleb.mp3'),
-		}
-	)">
+	<li
+		@click="buttonSound(fnVal, { normal: require('src/assets/pzz_open.mp3'), find: require('src/assets/find_caleb.mp3') })"
+		:style="{ backgroundColor: randColor.bgColor, color: randColor.txtColor }"
+	>
 		<strong>{{ fnVal }}</strong>
 		<IconLayer v-if="fnB(fnVal) && pzVal !== fnVal" />
 	</li>
@@ -11,9 +10,16 @@
 
 <script>
 import IconLayer from 'src/stepC/IconLayer.vue'
+import rdObj from 'src/inc/js/randomColor.js'
 
 export default {
 	components: { IconLayer },
+	setup() {
+		const randColor = rdObj.randomColor()
+		return {
+			randColor
+		}
+	},
 	props: {
 		fnA: { type: Function, default: () => console.log('Empty Function!') },
 		fnB: { type: Function, default: () => console.log('Empty Function!') },
@@ -49,17 +55,18 @@ li {
 	align-items: center;
 	align-content: center;
 	gap: .5rem;
-	padding: .5rem 1rem;
+	padding: .5rem 1rem 1rem !important;
 	background-color: $light-blue-8;
 	border-radius: .5rem;
 	box-shadow: .1rem .1rem .3rem rgb(0, 0, 0, .8);
 	color: #fff;
-	font-weight: 800;
-	font-size: 3.5rem;
+	font-size: 4.5rem !important;
+	font-family: 'Acme', sans-serif !important;
 	cursor: pointer;
 	overflow: hidden;
 	&:hover {
-		background-color: $light-green-7;
+		background-color: #D1E8FF !important;
+		color: #0529A6 !important;
 	}
 	> div {
 		position: absolute;

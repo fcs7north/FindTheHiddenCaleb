@@ -6,19 +6,19 @@
 
 				<q-list class="shadow-2 rounded-borders j-exp-list" style="width: 100%;">
 					<q-item>
-						<q-item-section avatar><q-avatar size="3.5rem"><img :src="require('src/assets/icon-6.jpg')"></q-avatar></q-item-section>
+						<q-item-section avatar><q-avatar size="2.5rem"><img :src="require('src/assets/icon-6.jpg')"></q-avatar></q-item-section>
 						<q-item-section style="text-align: left;" class="j-exp-txt">노래 부르기 <b>(왕국노래, 오리지널송, 어린이노래 등)</b></q-item-section>
 					</q-item>
 					<q-item>
-						<q-item-section avatar><q-avatar size="3.5rem"><img :src="require('src/assets/icon-10.jpg')"></q-avatar></q-item-section>
+						<q-item-section avatar><q-avatar size="2.5rem"><img :src="require('src/assets/icon-10.jpg')"></q-avatar></q-item-section>
 						<q-item-section style="text-align: left" class="j-exp-txt">경험담</q-item-section>
 					</q-item>
 					<q-item>
-						<q-item-section avatar><q-avatar size="3.5rem"><img :src="require('src/assets/icon-13.jpg')"></q-avatar></q-item-section>
+						<q-item-section avatar><q-avatar size="2.5rem"><img :src="require('src/assets/icon-13.jpg')"></q-avatar></q-item-section>
 						<q-item-section style="text-align: left" class="j-exp-txt">성경에서 찾은 보물 <b>(집회 때 기회가 없으셨던 것도)</b></q-item-section>
 					</q-item>
 					<q-item>
-						<q-item-section avatar><q-avatar size="3.5rem"><img :src="require('src/assets/icon-8.jpg')"></q-avatar></q-item-section>
+						<q-item-section avatar><q-avatar size="2.5rem"><img :src="require('src/assets/icon-8.jpg')"></q-avatar></q-item-section>
 						<q-item-section style="text-align: left" class="j-exp-txt">그외 격려가 되는 모든 것</q-item-section>
 					</q-item>
 				</q-list>
@@ -95,7 +95,7 @@ onMounted(() => pObj.playInStepB(stepMain.value, mounted_chkr, .1, .6))
 			color: $primary;
 			border-radius: 1.5rem !important;
 			background: $blue-grey-2;
-			@include font-nago($wg: 800, $size: 2rem);
+			@include font-nago($wg: 800, $size: 1.7rem);
 			@include dtxt-shadow;
 			.j-exp-txt {
 				display: block !important;

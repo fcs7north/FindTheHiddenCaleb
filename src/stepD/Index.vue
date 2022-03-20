@@ -41,7 +41,7 @@
 					:fn="nextC"
 				/>
 				<QmButton
-					title="술래가 되셨나요?"
+					title="술래설명"
 					:sound="require('src/assets/normal_02.mp3')"
 					color="positive"
 					:fn="openExp"

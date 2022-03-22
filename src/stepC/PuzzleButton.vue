@@ -2,6 +2,7 @@
 	<li
 		@click="buttonSound(fnVal, { normal: require('src/assets/pzz_open.mp3'), find: require('src/assets/find_caleb.mp3') })"
 		:style="{ backgroundColor: randColor.bgColor, color: randColor.txtColor }"
+		:class="{ clickDone: fnB(fnVal) && pzVal !== fnVal }"
 	>
 		<strong>{{ fnVal }}</strong>
 		<IconLayer v-if="fnB(fnVal) && pzVal !== fnVal" />
@@ -33,6 +34,8 @@ export default {
 	},
 	methods: {
 		buttonSound (val, opt) {
+			if (this.fnB(this.fnVal) && this.pzVal !== this.fnVal) return
+
 			let audio = null
 			// console.log(`${val} : ${this.pzVal}`)
 			if (val === this.pzVal) { // 주니를 찾은 경우
@@ -43,7 +46,10 @@ export default {
 			audio.play()
 			this.fnA(val)
 		}
-	}
+	},
+	// mounted() {
+	// 	console.log(this.pzVal)
+	// },
 }
 </script>
 
@@ -55,18 +61,26 @@ li {
 	align-items: center;
 	align-content: center;
 	gap: .5rem;
-	padding: .5rem 1rem 1rem !important;
+	min-height: 8rem;
+	padding: .5rem !important;
+	line-height: 100%;
 	background-color: $light-blue-8;
 	border-radius: .5rem;
-	box-shadow: .1rem .1rem .3rem rgb(0, 0, 0, .8);
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .8);
 	color: #fff;
-	font-size: 4.5rem !important;
-	font-family: 'Acme', sans-serif !important;
+	font-size: 7rem !important;
+	font-family: 'Luckiest Guy', cursive !important;
 	cursor: pointer;
 	overflow: hidden;
+	opacity: .9;
+	&.clickDone {
+		opacity: 1 !important;
+		cursor: inherit !important;
+	}
 	&:hover {
-		background-color: #D1E8FF !important;
-		color: #0529A6 !important;
+		background-color: #AE30BF !important;
+		color: #fff !important;
+		opacity: 1;
 	}
 	> div {
 		position: absolute;

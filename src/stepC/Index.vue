@@ -181,7 +181,7 @@ div#step-main {
 				grid-auto-rows: minmax(1rem, auto);
 				gap: 1rem;
 				list-style: none;
-				padding: 0 0 2rem;
+				padding: 0 1rem 2rem;
 				margin: 0;
 				li {
 					position: relative;

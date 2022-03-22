@@ -136,13 +136,20 @@ div#step-main {
 					align-content: center;
 					gap: .5rem;
 					padding: .5rem 1rem;
-					background-color: $indigo-10;
+					background-color: #F2A30F;
+					&:nth-child(odd) {
+						background-color: #48A61C;
+					}
 					border-radius: .5rem;
 					box-shadow: .1rem .1rem .3rem rgb(0, 0, 0, .8);
 					color: #fff;
 					font-weight: 800;
 					font-size: 2.5rem;
 					cursor: pointer;
+					opacity: .9;
+					&:hover {
+						opacity: 1 !important;
+					}
 
 					&.not-tagger {
 						cursor: initial;

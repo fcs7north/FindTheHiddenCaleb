@@ -1,11 +1,11 @@
 const _ = require('lodash')
 
 const colorArr = [
-	// { bgColor: '#0A2E52', txtColor: '#fff' }, // primary
-	{ bgColor: '#5B9AD9', txtColor: '#fff' }, // accent
-	{ bgColor: '#1976D2', txtColor: '#fff' }, // dark
-	// { bgColor: '#223A52', txtColor: '#fff' }, // positive
-	{ bgColor: '#13599E', txtColor: '#fff' }, // negative
+	// { bgColor: '#AE30BF', txtColor: '#fff' }, // primary
+	// { bgColor: '#D73D2D', txtColor: '#fff' }, // accent
+	{ bgColor: '#638C26', txtColor: '#fff' }, // dark
+	// { bgColor: '#EDF257', txtColor: '#222' }, // positive
+	// { bgColor: '#F2EA79', txtColor: '#111' }, // negative
 	// { bgColor: '#31CCEC', txtColor: '#fff' }, // info
 	// { bgColor: '#F2C037', txtColor: '#fff' }, // warning
 	// { bgColor: '#FA5201', txtColor: '#fff' }, // warning

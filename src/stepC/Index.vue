@@ -177,40 +177,12 @@ div#step-main {
 			}
 			ul {
 				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(120px, auto));
-				grid-auto-rows: minmax(1rem, auto);
+				grid-template-columns: repeat(auto-fill, minmax(130px, auto));
+				grid-auto-rows: minmax(80px, auto);
 				gap: 1rem;
 				list-style: none;
 				padding: 0 1rem 2rem;
 				margin: 0;
-				li {
-					position: relative;
-					display: flex;
-					justify-content: space-around;
-					align-items: center;
-					align-content: center;
-					gap: .5rem;
-					padding: .5rem 1rem;
-					background-color: $light-blue-8;
-					border-radius: .5rem;
-					box-shadow: .1rem .1rem .3rem rgb(0, 0, 0, .8);
-					color: #fff;
-					font-weight: 800;
-					font-size: 3.5rem;
-					cursor: pointer;
-					overflow: hidden;
-					&:hover {
-						background-color: $light-green-7;
-					}
-					> div {
-						position: absolute;
-						left: 0;
-						top: 0;
-						z-index: 100;
-						width: 100%;
-						height: 100%;
-					}
-				}
 			}
 		}
 	}

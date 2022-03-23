@@ -61,14 +61,12 @@ li {
 	align-items: center;
 	align-content: center;
 	gap: .5rem;
-	min-height: 8rem;
-	padding: .5rem !important;
-	line-height: 100%;
-	background-color: $light-blue-8;
+	padding: 0 .5rem !important;
+	// background-color: $light-blue-8 !important;
 	border-radius: .5rem;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, .8);
 	color: #fff;
-	font-size: 7rem !important;
+	font-size: 6rem !important;
 	font-family: 'Luckiest Guy', cursive !important;
 	cursor: pointer;
 	overflow: hidden;
